@@ -8,13 +8,13 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0; padding: 0;
-  background: #f7f8fa; /* background netral kalem */
+  background: #f5f5f5;
   color: #333;
 }
 
 /* Header */
 header {
-  background: #2c3e50; /* biru gelap elegan */
+  background: #6c5b7b;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -22,18 +22,6 @@ header {
   font-weight: bold;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-header img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #fff;
 }
 
 /* Search Bar */
@@ -45,13 +33,13 @@ header img {
   padding: 10px 15px;
   width: 60%;
   max-width: 400px;
-  border: 2px solid #2c3e50;
+  border: 2px solid #6c5b7b;
   border-radius: 25px;
   outline: none;
   transition: 0.3s;
 }
 .search-bar input:focus {
-  border-color: #2980b9;
+  border-color: #c06c84;
 }
 
 /* Grid Produk */
@@ -62,7 +50,7 @@ header img {
   padding: 20px;
 }
 .card {
-  background: #fff;
+  background: #fff9f4;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -76,7 +64,7 @@ header img {
   width: 100%;
   height: 180px;
   object-fit: contain;
-  background: #f2f4f7;
+  background: #fdfbf6;
 }
 .card-content {
   padding: 15px;
@@ -85,7 +73,7 @@ header img {
 .category {
   font-size: 12px;
   color: #fff;
-  background: #2c3e50;
+  background: #6c5b7b;
   display: inline-block;
   padding: 3px 8px;
   border-radius: 12px;
@@ -99,7 +87,7 @@ header img {
 .card-content a {
   display: inline-block;
   padding: 10px 18px;
-  background: #2c3e50;
+  background: #6c5b7b;
   color: #fff;
   border-radius: 25px;
   text-decoration: none;
@@ -107,7 +95,7 @@ header img {
   transition: 0.3s;
 }
 .card-content a:hover {
-  background: #2980b9;
+  background: #c06c84;
 }
 
 /* Responsif */
@@ -126,20 +114,28 @@ header img {
 </head>
 <body>
 
-<header>
-  <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Profil">
-  FYIBYME.id
-</header>
+<header>FYIBYME.id</header>
 
 <div class="search-bar">
   <input type="text" id="searchInput" placeholder="Cari kode atau nama produk...">
 </div>
 
 <section class="products" id="products">
+  <!-- Produk Baru di Atas -->
+  <div class="card">
+    <img src="https://i.postimg.cc/gjpQ8d7z/Screenshot-20250827-141825.jpg" alt="ORTUSEIGHT BRISBANE Walking Shoes">
+    <div class="card-content">
+      <div class="category">Sepatu</div>
+      <h3>ORTUSEIGHT BRISBANE Walking Shoes</h3>
+      <a href="https://vt.tokopedia.com/t/ZSHG3chEor2FK-im49g/" target="_blank">Beli Produk</a>
+    </div>
+  </div>
+
+  <!-- Produk Sebelumnya -->
   <div class="card">
     <img src="https://i.postimg.cc/3dkcJF7q/Sevel-2023-10-400x266.jpg" alt="Sevel">
     <div class="card-content">
-      <div class="category">Minuman</div>
+      <div class="category">Kesehatan</div>
       <h3>SEVEL - ISI 10 (WIL.1 & 2)</h3>
       <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
     </div>
