@@ -3,190 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FYPbyMe.id - Produk Kesehatan Pilihan</title>
+<title>FYIBYME.id - Produk Pilihan</title>
 <style>
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0; padding: 0;
-    background: #f8fdfc;
-    color: #333;
-    overflow-x: hidden;
-  }
-  .search-bar {
-    text-align: center; 
-    margin: 20px;
-  }
-  .search-bar input {
-    padding: 10px; width: 60%; max-width: 400px;
-    border: 2px solid #4db6ac; border-radius: 25px;
-    outline: none;
-  }
-  .products {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px; 
-    padding: 20px;
-    margin-right: 320px; /* space for sidebar */
-  }
-  .card {
-    background: white; 
-    border-radius: 15px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    overflow: hidden; 
-    position: relative;
-    transition: 0.3s;
-  }
-  .card:hover { transform: translateY(-5px); }
-  .card img {
-    width: 100%; height: 180px; object-fit: contain;
-    background: #f3fdfc;
-  }
-  .card-content {
-    padding: 15px;
-    text-align: center;
-  }
-  .category {
-    font-size: 12px;
-    color: #fff;
-    background: #4db6ac;
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 12px;
-    margin-bottom: 5px;
-  }
-  .card-content h3 {
-    font-size: 16px; margin: 10px 0;
-    color: #2e7d72;
-  }
-  .card-content a, .card-content button {
-    display: inline-block;
-    padding: 8px 15px; 
-    border-radius: 20px;
-    text-decoration: none; 
-    font-size: 14px;
-    transition: 0.3s;
-    margin: 5px 2px;
-    cursor: pointer;
-  }
-  .card-content a {
-    background: #4db6ac; 
-    color: white; 
-  }
-  .card-content a:hover { background: #2e7d72; }
-  .card-content button {
-    background: #fff;
-    color: #4db6ac;
-    border: 2px solid #4db6ac;
-    position: relative;
-    overflow: hidden;
-  }
-  .card-content button:hover {
-    background: #4db6ac;
-    color: white;
-  }
-
-  /* Sidebar Keranjang */
-  .sidebar-cart {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 100vh;
-    background: #fff;
-    border-left: 2px solid #4db6ac;
-    box-shadow: -2px 0 15px rgba(0,0,0,0.1);
-    padding: 20px;
-    overflow-y: auto;
-    z-index: 1000;
-  }
-  .sidebar-cart h2 {
-    margin-top: 0;
-    color: #4db6ac;
-  }
-  .cart-item {
-    display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee;
-  }
-  .fly-img {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    z-index: 1000;
-    pointer-events: none;
-    transition: all 0.8s ease-in-out;
-  }
-  footer {
-    background: #2e7d72;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  .social a {
-    margin: 0 10px; 
-    text-decoration: none; 
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    display: inline-flex;
-    align-items: center;
-  }
-  .social a img {
-    width: 24px;
-    height: 24px;
-    margin-right: 6px;
-  }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0; padding: 0;
+  background: #fff;
+  color: #000;
+}
+header {
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.card:hover { 
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: #f9f9f9;
+}
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+.category {
+  font-size: 12px;
+  color: #fff;
+  background: #000;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-bottom: 5px;
+}
+.card-content h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+.card-content a {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #000;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.card-content a:hover {
+  background: #444;
+}
+footer {
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+.social a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+}
+.social a img {
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+}
 </style>
 </head>
 <body>
 
-<div class="search-bar">
-  <input type="text" placeholder="Cari kode atau nama produk...">
-</div>
+<header>FYIBYME.id</header>
 
 <section class="products">
-  <div class="card" data-name="SEVEL - ISI 10" data-category="Kesehatan">
+  <div class="card">
     <img src="https://i.postimg.cc/3dkcJF7q/Sevel-2023-10-400x266.jpg" alt="Sevel">
     <div class="card-content">
       <div class="category">Kesehatan</div>
       <h3>SEVEL - ISI 10 (WIL.1 & 2)</h3>
       <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
-      <button onclick="addToCart(this)">Masukkan Keranjang</button>
     </div>
   </div>
-  <div class="card" data-name="HANIA MATCHA LATTE" data-category="Minuman">
+
+  <div class="card">
     <img src="https://i.postimg.cc/FRp8pRPD/matchalatte.png" alt="Hania Matcha Latte">
     <div class="card-content">
       <div class="category">Minuman</div>
       <h3>HANIA MATCHA LATTE</h3>
       <a href="https://s.hni.id/61JXZVQ" target="_blank">Beli Produk</a>
-      <button onclick="addToCart(this)">Masukkan Keranjang</button>
     </div>
   </div>
-  <div class="card" data-name="SABUN TRANSPARAN KOLAGEN" data-category="Kecantikan">
+
+  <div class="card">
     <img src="https://i.postimg.cc/wMbPKrYN/sabunkolagen.webp" alt="Sabun Kolagen">
     <div class="card-content">
       <div class="category">Kecantikan</div>
       <h3>SABUN TRANSPARAN KOLAGEN</h3>
       <a href="https://s.hni.id/2XAPJ9U" target="_blank">Beli Produk</a>
-      <button onclick="addToCart(this)">Masukkan Keranjang</button>
     </div>
   </div>
-  <div class="card" data-name="MINYAK HERBA SINERGI 2020" data-category="Kesehatan">
+
+  <div class="card">
     <img src="https://i.postimg.cc/T1PS46FG/minyakherbasinergi.webp" alt="Minyak Herba Sinergi">
     <div class="card-content">
       <div class="category">Kesehatan</div>
       <h3>MINYAK HERBA SINERGI 2020</h3>
       <a href="https://s.hni.id/QJTE50Z" target="_blank">Beli Produk</a>
-      <button onclick="addToCart(this)">Masukkan Keranjang</button>
     </div>
   </div>
 </section>
-
-<!-- Sidebar Keranjang -->
-<div class="sidebar-cart" id="sidebar-cart">
-  <h2>Keranjang - fyibyme.id</h2>
-  <div id="cart-items">Belum ada produk di keranjang.</div>
-</div>
 
 <footer>
   <p>Ikuti Sosial Media Kami</p>
@@ -198,60 +145,8 @@
       <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">fyibyme.id
     </a>
   </div>
-  <p>&copy; 2025 FYPbyMe.id</p>
+  <p>&copy; 2025 FYIBYME.id</p>
 </footer>
-
-<script>
-let cart = [];
-
-function addToCart(btn) {
-  const card = btn.closest('.card');
-  const name = card.dataset.name;
-  const category = card.dataset.category;
-
-  // Animasi gambar terbang ke sidebar
-  const img = card.querySelector('img');
-  const flyImg = img.cloneNode(true);
-  flyImg.classList.add('fly-img');
-  document.body.appendChild(flyImg);
-  const rect = img.getBoundingClientRect();
-  flyImg.style.top = rect.top + 'px';
-  flyImg.style.left = rect.left + 'px';
-
-  const cartSidebar = document.getElementById('sidebar-cart');
-  const cartRect = cartSidebar.getBoundingClientRect();
-
-  setTimeout(() => {
-    flyImg.style.top = cartRect.top + 'px';
-    flyImg.style.left = cartRect.left + 'px';
-    flyImg.style.width = '40px';
-    flyImg.style.height = '40px';
-    flyImg.style.opacity = '0.5';
-  }, 10);
-
-  setTimeout(() => {
-    flyImg.remove();
-    // Tambah ke cart
-    cart.push({name, category});
-    updateCartList();
-  }, 800);
-}
-
-function updateCartList() {
-  const container = document.getElementById('cart-items');
-  container.innerHTML = '';
-  if(cart.length === 0) {
-    container.textContent = 'Belum ada produk di keranjang.';
-    return;
-  }
-  cart.forEach((item, index) => {
-    const div = document.createElement('div');
-    div.className = 'cart-item';
-    div.textContent = item.name + ' (' + item.category + ')';
-    container.appendChild(div);
-  });
-}
-</script>
 
 </body>
 </html>
