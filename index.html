@@ -49,6 +49,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       overflow: hidden; 
       transition: 0.3s;
+      position: relative;
     }
     .card:hover { transform: translateY(-5px); }
     .card img {
@@ -63,17 +64,30 @@
       font-size: 16px; margin: 10px 0;
       color: #2e7d72;
     }
-    .card-content a {
+    .card-content a, .card-content button {
       display: inline-block;
       padding: 8px 15px; 
-      background: #4db6ac; 
-      color: white; 
       border-radius: 20px;
       text-decoration: none; 
       font-size: 14px;
       transition: 0.3s;
+      margin: 5px 2px;
+      cursor: pointer;
+    }
+    .card-content a {
+      background: #4db6ac; 
+      color: white; 
     }
     .card-content a:hover { background: #2e7d72; }
+    .card-content button {
+      background: #fff;
+      color: #4db6ac;
+      border: 2px solid #4db6ac;
+    }
+    .card-content button:hover {
+      background: #4db6ac;
+      color: white;
+    }
     footer {
       background: #2e7d72; 
       color: white; 
@@ -87,17 +101,23 @@
       color: white;
       font-weight: bold;
       font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .social a svg {
+      margin-right: 6px;
     }
     .cart {
       position: fixed; 
       bottom: 20px; right: 20px;
-      background: #4db6ac; 
-      color: white; 
+      background: #fff; 
+      color: #4db6ac; 
       padding: 12px 18px; 
       border-radius: 50%; 
       font-size: 20px;
       cursor: pointer; 
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: flex; align-items: center; justify-content: center;
     }
   </style>
 </head>
@@ -124,6 +144,7 @@
       <div class="card-content">
         <h3>SEVEL - ISI 10 (WIL.1 & 2)</h3>
         <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
+        <button>Masukkan Keranjang</button>
       </div>
     </div>
     <!-- Produk 2 -->
@@ -132,6 +153,7 @@
       <div class="card-content">
         <h3>HANIA MATCHA LATTE</h3>
         <a href="https://s.hni.id/61JXZVQ" target="_blank">Beli Produk</a>
+        <button>Masukkan Keranjang</button>
       </div>
     </div>
     <!-- Produk 3 -->
@@ -140,6 +162,7 @@
       <div class="card-content">
         <h3>SABUN TRANSPARAN KOLAGEN</h3>
         <a href="https://s.hni.id/2XAPJ9U" target="_blank">Beli Produk</a>
+        <button>Masukkan Keranjang</button>
       </div>
     </div>
     <!-- Produk 4 -->
@@ -148,6 +171,7 @@
       <div class="card-content">
         <h3>MINYAK HERBA SINERGI 2020</h3>
         <a href="https://s.hni.id/QJTE50Z" target="_blank">Beli Produk</a>
+        <button>Masukkan Keranjang</button>
       </div>
     </div>
   </section>
@@ -157,8 +181,18 @@
   <footer id="kontak">
     <p>Ikuti Sosial Media Kami</p>
     <div class="social">
-      <a href="https://www.instagram.com/fyibyme.id" target="_blank">📸 Instagram</a>
-      <a href="https://www.tiktok.com/@fyibyme.id" target="_blank">🎵 TikTok</a>
+      <a href="https://www.instagram.com/fyibyme.id" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 0C5.243 0 5.005.01 4.037.05 3.072.09 2.29.27 1.6.528c-.696.262-1.286.626-1.862 1.2-.575.574-.938 1.166-1.2 1.862C-.27 4.29-.09 5.072-.05 6.037-.01 7.005 0 7.243 0 10s-.01 2.995-.05 3.963c-.04.965-.22 1.747-.478 2.437-.262.696-.626 1.286-1.2 1.862-.574.575-1.166.938-1.862 1.2-.69.258-1.472.438-2.437.478C.01 15.99 0 16.243 0 10s.01-2.995.05-3.963c.04-.965.22-1.747.478-2.437.262-.696.626-1.286 1.2-1.862.575-.574 1.166-.938 1.862-1.2C2.29-.27 3.072-.09 4.037-.05 5.005-.01 5.243 0 8 0z"/>
+        </svg>
+        Instagram
+      </a>
+      <a href="https://www.tiktok.com/@fyibyme.id" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M9 0h3a2 2 0 0 1 2 2v3h-1V2a1 1 0 0 0-1-1H9V0zM6 3a6 6 0 1 0 6 6V6a4 4 0 1 1-4-4H6z"/>
+        </svg>
+        TikTok
+      </a>
     </div>
     <p>&copy; 2025 FYPbyMe.id</p>
   </footer>
