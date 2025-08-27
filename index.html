@@ -8,13 +8,13 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0; padding: 0;
-  background: #f5f5f5; /* kalem & seragam */
+  background: #f7f8fa; /* background netral kalem */
   color: #333;
 }
 
 /* Header */
 header {
-  background: #6c5b7b; /* kalem ungu */
+  background: #2c3e50; /* biru gelap elegan */
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -22,6 +22,18 @@ header {
   font-weight: bold;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
 }
 
 /* Search Bar */
@@ -33,13 +45,13 @@ header {
   padding: 10px 15px;
   width: 60%;
   max-width: 400px;
-  border: 2px solid #6c5b7b;
+  border: 2px solid #2c3e50;
   border-radius: 25px;
   outline: none;
   transition: 0.3s;
 }
 .search-bar input:focus {
-  border-color: #c06c84;
+  border-color: #2980b9;
 }
 
 /* Grid Produk */
@@ -50,7 +62,7 @@ header {
   padding: 20px;
 }
 .card {
-  background: #fff; /* seragam kalem */
+  background: #fff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -64,7 +76,7 @@ header {
   width: 100%;
   height: 180px;
   object-fit: contain;
-  background: #fdfbf6;
+  background: #f2f4f7;
 }
 .card-content {
   padding: 15px;
@@ -73,7 +85,7 @@ header {
 .category {
   font-size: 12px;
   color: #fff;
-  background: #6c5b7b; /* warna header seragam */
+  background: #2c3e50;
   display: inline-block;
   padding: 3px 8px;
   border-radius: 12px;
@@ -87,7 +99,7 @@ header {
 .card-content a {
   display: inline-block;
   padding: 10px 18px;
-  background: #6c5b7b; /* warna header seragam */
+  background: #2c3e50;
   color: #fff;
   border-radius: 25px;
   text-decoration: none;
@@ -95,7 +107,7 @@ header {
   transition: 0.3s;
 }
 .card-content a:hover {
-  background: #c06c84; /* hover kalem */
+  background: #2980b9;
 }
 
 /* Responsif */
@@ -114,7 +126,10 @@ header {
 </head>
 <body>
 
-<header>FYIBYME.id</header>
+<header>
+  <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Profil">
+  FYIBYME.id
+</header>
 
 <div class="search-bar">
   <input type="text" id="searchInput" placeholder="Cari kode atau nama produk...">
