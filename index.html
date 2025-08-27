@@ -20,6 +20,7 @@
       align-items: center;
       position: sticky; 
       top: 0;
+      z-index: 1000;
     }
     header h1 { margin: 0; font-size: 24px; }
     nav a {
@@ -64,6 +65,15 @@
       font-size: 16px; margin: 10px 0;
       color: #2e7d72;
     }
+    .category {
+      font-size: 12px;
+      color: #fff;
+      background: #4db6ac;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-bottom: 5px;
+    }
     .card-content a, .card-content button {
       display: inline-block;
       padding: 8px 15px; 
@@ -104,7 +114,9 @@
       display: inline-flex;
       align-items: center;
     }
-    .social a svg {
+    .social a img {
+      width: 24px;
+      height: 24px;
       margin-right: 6px;
     }
     .cart {
@@ -118,6 +130,16 @@
       cursor: pointer; 
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       display: flex; align-items: center; justify-content: center;
+    }
+    .cart span {
+      font-size: 12px;
+      color: #fff;
+      background: #4db6ac;
+      border-radius: 50%;
+      width: 18px; height: 18px;
+      display: flex; align-items: center; justify-content: center;
+      position: absolute;
+      top: -5px; right: -5px;
     }
   </style>
 </head>
@@ -142,60 +164,68 @@
     <div class="card">
       <img src="https://i.postimg.cc/3dkcJF7q/Sevel-2023-10-400x266.jpg" alt="Sevel">
       <div class="card-content">
+        <div class="category">Kesehatan</div>
         <h3>SEVEL - ISI 10 (WIL.1 & 2)</h3>
         <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
-        <button>Masukkan Keranjang</button>
+        <button onclick="addToCart()">Masukkan Keranjang</button>
       </div>
     </div>
     <!-- Produk 2 -->
     <div class="card">
       <img src="https://i.postimg.cc/FRp8pRPD/matchalatte.png" alt="Hania Matcha Latte">
       <div class="card-content">
+        <div class="category">Minuman</div>
         <h3>HANIA MATCHA LATTE</h3>
         <a href="https://s.hni.id/61JXZVQ" target="_blank">Beli Produk</a>
-        <button>Masukkan Keranjang</button>
+        <button onclick="addToCart()">Masukkan Keranjang</button>
       </div>
     </div>
     <!-- Produk 3 -->
     <div class="card">
       <img src="https://i.postimg.cc/wMbPKrYN/sabunkolagen.webp" alt="Sabun Transparan Kolagen">
       <div class="card-content">
+        <div class="category">Kecantikan</div>
         <h3>SABUN TRANSPARAN KOLAGEN</h3>
         <a href="https://s.hni.id/2XAPJ9U" target="_blank">Beli Produk</a>
-        <button>Masukkan Keranjang</button>
+        <button onclick="addToCart()">Masukkan Keranjang</button>
       </div>
     </div>
     <!-- Produk 4 -->
     <div class="card">
       <img src="https://i.postimg.cc/T1PS46FG/minyakherbasinergi.webp" alt="Minyak Herba Sinergi">
       <div class="card-content">
+        <div class="category">Kesehatan</div>
         <h3>MINYAK HERBA SINERGI 2020</h3>
         <a href="https://s.hni.id/QJTE50Z" target="_blank">Beli Produk</a>
-        <button>Masukkan Keranjang</button>
+        <button onclick="addToCart()">Masukkan Keranjang</button>
       </div>
     </div>
   </section>
 
-  <div class="cart">🛒</div>
+  <div class="cart">
+    🛒 <span id="cart-count">0</span>
+  </div>
 
   <footer id="kontak">
     <p>Ikuti Sosial Media Kami</p>
     <div class="social">
       <a href="https://www.instagram.com/fyibyme.id" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M8 0C5.243 0 5.005.01 4.037.05 3.072.09 2.29.27 1.6.528c-.696.262-1.286.626-1.862 1.2-.575.574-.938 1.166-1.2 1.862C-.27 4.29-.09 5.072-.05 6.037-.01 7.005 0 7.243 0 10s-.01 2.995-.05 3.963c-.04.965-.22 1.747-.478 2.437-.262.696-.626 1.286-1.2 1.862-.574.575-1.166.938-1.862 1.2-.69.258-1.472.438-2.437.478C.01 15.99 0 16.243 0 10s.01-2.995.05-3.963c.04-.965.22-1.747.478-2.437.262-.696.626-1.286 1.2-1.862.575-.574 1.166-.938 1.862-1.2C2.29-.27 3.072-.09 4.037-.05 5.005-.01 5.243 0 8 0z"/>
-        </svg>
-        Instagram
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">Instagram
       </a>
       <a href="https://www.tiktok.com/@fyibyme.id" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M9 0h3a2 2 0 0 1 2 2v3h-1V2a1 1 0 0 0-1-1H9V0zM6 3a6 6 0 1 0 6 6V6a4 4 0 1 1-4-4H6z"/>
-        </svg>
-        TikTok
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">TikTok
       </a>
     </div>
     <p>&copy; 2025 FYPbyMe.id</p>
   </footer>
+
+  <script>
+    let count = 0;
+    function addToCart() {
+      count++;
+      document.getElementById('cart-count').textContent = count;
+    }
+  </script>
 
 </body>
 </html>
