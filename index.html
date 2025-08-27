@@ -3,246 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FYPbyMe - Produk & Info</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>FYPbyMe.id - Produk Kesehatan Pilihan</title>
   <style>
-    :root {
-      --primary: #4f9da6;   /* warna utama tosca */
-      --secondary: #f0f4f8;
-      --text: #333;
-      --white: #fff;
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--secondary);
-      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0; padding: 0;
+      background: #f8fdfc;
+      color: #333;
     }
-
     header {
-      background: var(--primary);
-      color: var(--white);
-      text-align: center;
-      padding: 2rem 1rem;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
+      background: #4db6ac; 
+      color: white; 
+      padding: 15px 30px;
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      position: sticky; 
+      top: 0;
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      font-weight: 700;
+    header h1 { margin: 0; font-size: 24px; }
+    nav a {
+      color: white; 
+      margin: 0 12px; 
+      text-decoration: none; 
+      font-weight: 500;
     }
-
-    header p {
-      margin: 5px 0 0;
-      font-size: 1rem;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    /* Search Bar */
     .search-bar {
-      text-align: center;
-      margin: 20px 0 30px;
+      text-align: center; 
+      margin: 20px;
     }
-
     .search-bar input {
-      padding: 12px 18px;
-      width: 80%;
-      max-width: 400px;
-      border: 2px solid var(--primary);
-      border-radius: 25px;
-      font-size: 1rem;
+      padding: 10px; width: 60%; max-width: 400px;
+      border: 2px solid #4db6ac; border-radius: 25px;
       outline: none;
     }
-
-    .category {
-      margin: 40px 0 20px;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--primary);
-      border-left: 6px solid var(--primary);
-      padding-left: 10px;
+    .products {
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px; 
+      padding: 20px;
     }
-
-    .grid {
-      display: grid;
-      gap: 20px;
+    .card {
+      background: white; 
+      border-radius: 15px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      overflow: hidden; 
+      transition: 0.3s;
     }
-
-    @media (min-width: 600px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .card:hover { transform: translateY(-5px); }
+    .card img {
+      width: 100%; height: 180px; object-fit: contain;
+      background: #f3fdfc;
     }
-
-    @media (min-width: 900px) {
-      .grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .product {
-      background: var(--white);
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .product:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
-
-    .product img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .product-content {
+    .card-content {
       padding: 15px;
       text-align: center;
     }
-
-    .product-content h2 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: var(--primary);
+    .card-content h3 {
+      font-size: 16px; margin: 10px 0;
+      color: #2e7d72;
     }
-
-    .btn {
+    .card-content a {
       display: inline-block;
-      background: var(--primary);
-      color: var(--white);
-      padding: 10px 18px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
+      padding: 8px 15px; 
+      background: #4db6ac; 
+      color: white; 
+      border-radius: 20px;
+      text-decoration: none; 
+      font-size: 14px;
+      transition: 0.3s;
     }
-
-    .btn:hover {
-      background: #3d7c84;
-    }
-
+    .card-content a:hover { background: #2e7d72; }
     footer {
+      background: #2e7d72; 
+      color: white; 
+      padding: 25px; 
       text-align: center;
-      padding: 25px 10px;
       margin-top: 30px;
-      background: var(--primary);
-      color: var(--white);
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
     }
-
-    .social {
-      margin: 15px 0;
-    }
-
     .social a {
-      margin: 0 15px;
-      font-size: 1.8rem;
-      color: var(--white);
-      transition: transform 0.3s, color 0.3s;
+      margin: 0 10px; 
+      text-decoration: none; 
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
     }
-
-    .social a:hover {
-      transform: scale(1.2);
-      color: #dfeef2;
+    .cart {
+      position: fixed; 
+      bottom: 20px; right: 20px;
+      background: #4db6ac; 
+      color: white; 
+      padding: 12px 18px; 
+      border-radius: 50%; 
+      font-size: 20px;
+      cursor: pointer; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>FYPbyMe</h1>
-    <p>Rekomendasi Produk Pilihan & Info Menarik</p>
+    <h1>FYPbyMe.id</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#produk">Produk</a>
+      <a href="#kesehatan">Kesehatan</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
   </header>
 
-  <div class="container">
-    <!-- Search -->
-    <div class="search-bar">
-      <input type="text" id="search" placeholder="Cari kode atau nama produk...">
-    </div>
-
-    <!-- Minuman -->
-    <div class="category">🍵 Minuman</div>
-    <div class="grid">
-      <div class="product" data-name="SEVEL" data-code="HNI-001">
-        <img src="https://i.postimg.cc/3dkcJF7q/Sevel-2023-10-400x266.jpg" alt="SEVEL">
-        <div class="product-content">
-          <h2>SEVEL - ISI 10 (WIL. 1 & 2)</h2>
-          <a href="https://s.hni.id/DHXIEXF" class="btn" target="_blank">Beli Sekarang</a>
-        </div>
-      </div>
-      <div class="product" data-name="HANIA MATCHA LATTE" data-code="HNI-002">
-        <img src="https://i.postimg.cc/FRp8pRPD/matchalatte.png" alt="HANIA MATCHA LATTE">
-        <div class="product-content">
-          <h2>HANIA MATCHA LATTE</h2>
-          <a href="https://s.hni.id/61JXZVQ" class="btn" target="_blank">Beli Sekarang</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Perawatan Tubuh -->
-    <div class="category">🧼 Perawatan Tubuh</div>
-    <div class="grid">
-      <div class="product" data-name="SABUN TRANSPARAN KOLAGEN" data-code="HNI-003">
-        <img src="https://i.postimg.cc/wMbPKrYN/sabunkolagen.webp" alt="SABUN TRANSPARAN KOLAGEN">
-        <div class="product-content">
-          <h2>SABUN TRANSPARAN KOLAGEN (WIL 1&2)</h2>
-          <a href="https://s.hni.id/2XAPJ9U" class="btn" target="_blank">Beli Sekarang</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Kesehatan -->
-    <div class="category">💊 Kesehatan</div>
-    <div class="grid">
-      <div class="product" data-name="MINYAK HERBA SINERGI" data-code="HNI-004">
-        <img src="https://i.postimg.cc/T1PS46FG/minyakherbasinergi.webp" alt="MINYAK HERBA SINERGI 2020">
-        <div class="product-content">
-          <h2>MINYAK HERBA SINERGI 2020</h2>
-          <a href="https://s.hni.id/QJTE50Z" class="btn" target="_blank">Beli Sekarang</a>
-        </div>
-      </div>
-    </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Cari kode atau nama produk...">
   </div>
 
-  <footer>
+  <section id="produk" class="products">
+    <!-- Produk 1 -->
+    <div class="card">
+      <img src="https://i.postimg.cc/3dkcJF7q/Sevel-2023-10-400x266.jpg" alt="Sevel">
+      <div class="card-content">
+        <h3>SEVEL - ISI 10 (WIL.1 & 2)</h3>
+        <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
+      </div>
+    </div>
+    <!-- Produk 2 -->
+    <div class="card">
+      <img src="https://i.postimg.cc/FRp8pRPD/matchalatte.png" alt="Hania Matcha Latte">
+      <div class="card-content">
+        <h3>HANIA MATCHA LATTE</h3>
+        <a href="https://s.hni.id/61JXZVQ" target="_blank">Beli Produk</a>
+      </div>
+    </div>
+    <!-- Produk 3 -->
+    <div class="card">
+      <img src="https://i.postimg.cc/wMbPKrYN/sabunkolagen.webp" alt="Sabun Transparan Kolagen">
+      <div class="card-content">
+        <h3>SABUN TRANSPARAN KOLAGEN</h3>
+        <a href="https://s.hni.id/2XAPJ9U" target="_blank">Beli Produk</a>
+      </div>
+    </div>
+    <!-- Produk 4 -->
+    <div class="card">
+      <img src="https://i.postimg.cc/T1PS46FG/minyakherbasinergi.webp" alt="Minyak Herba Sinergi">
+      <div class="card-content">
+        <h3>MINYAK HERBA SINERGI 2020</h3>
+        <a href="https://s.hni.id/QJTE50Z" target="_blank">Beli Produk</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cart">🛒</div>
+
+  <footer id="kontak">
     <p>Ikuti Sosial Media Kami</p>
     <div class="social">
-      <a href="https://www.instagram.com/fyibyme.id" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@fyibyme.id" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/fyibyme.id" target="_blank">📸 Instagram</a>
+      <a href="https://www.tiktok.com/@fyibyme.id" target="_blank">🎵 TikTok</a>
     </div>
-    <p>&copy; 2025 FYPbyMe</p>
+    <p>&copy; 2025 FYPbyMe.id</p>
   </footer>
 
-  <script>
-    // Search filter
-    const searchInput = document.getElementById('search');
-    const products = document.querySelectorAll('.product');
-
-    searchInput.addEventListener('keyup', function() {
-      const value = this.value.toLowerCase();
-      products.forEach(product => {
-        const name = product.getAttribute('data-name').toLowerCase();
-        const code = product.getAttribute('data-code').toLowerCase();
-        if (name.includes(value) || code.includes(value)) {
-          product.style.display = 'block';
-        } else {
-          product.style.display = 'none';
-        }
-      });
-    });
-  </script>
 </body>
 </html>
