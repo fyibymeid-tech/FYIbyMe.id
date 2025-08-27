@@ -3,125 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FYPbyMe - Produk</title>
+  <title>FYPbyMe - Produk & Info</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #f9f9f9;
+      padding: 0;
+      background-color: #f8f9fa;
       color: #333;
-      line-height: 1.6;
     }
 
     header {
+      background-color: #5c7c8a; /* warna kalem */
+      color: white;
       text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, #ffffff, #f1f1f1);
-      border-bottom: 2px solid #ddd;
+      padding: 1.5rem;
     }
 
     header h1 {
-      font-size: 2rem;
       margin: 0;
-      color: #222;
+      font-size: 1.8rem;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 20px;
     }
 
-    .product-card {
-      background: #fff;
+    .product {
+      background: white;
       border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
       overflow: hidden;
-      transition: transform 0.3s;
+      transition: transform 0.2s;
     }
 
-    .product-card:hover {
+    .product:hover {
       transform: translateY(-5px);
     }
 
-    .product-card img {
+    .product img {
       width: 100%;
       height: auto;
       display: block;
     }
 
     .product-content {
-      padding: 20px;
-      text-align: center;
+      padding: 15px;
     }
 
     .product-content h2 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: #222;
+      font-size: 1.2rem;
+      margin: 0 0 10px 0;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 15px;
-      padding: 12px 24px;
-      font-size: 1rem;
-      font-weight: 500;
-      color: #fff;
-      background-color: #5a6fbf; /* warna kalem sesuai logo vibes */
+      background: #5c7c8a;
+      color: white;
+      padding: 10px 16px;
       border-radius: 8px;
       text-decoration: none;
-      transition: background 0.3s ease;
+      transition: background 0.2s;
     }
 
     .btn:hover {
-      background-color: #4659a7;
+      background: #49606c;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: #f1f1f1;
-      color: #666;
-      font-size: 0.9rem;
-      margin-top: 40px;
+      margin-top: 30px;
+      background: #5c7c8a;
+      color: white;
+    }
+
+    .social {
+      margin-top: 10px;
+    }
+
+    .social a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     /* Responsif */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.6rem;
+    @media (min-width: 600px) {
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
       }
-      .product-content h2 {
-        font-size: 1.2rem;
-      }
-      .btn {
-        width: 100%;
+    }
+
+    @media (min-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>FYPbyMe</h1>
-    <p>Temukan produk pilihan terbaik untukmu ✨</p>
+    <p>Rekomendasi Produk Pilihan & Info Menarik</p>
   </header>
 
   <div class="container">
-    <div class="product-card">
-      <img src="https://i.postimg.cc/8P4Q4ZYT/Sevel-2023-10-400x266.png" alt="SEVEL - ISI 10 (WIL. 1 & 2)">
-      <div class="product-content">
-        <h2>SEVEL - ISI 10 (WIL. 1 & 2)</h2>
-        <p>Dapatkan produk SEVEL isi 10 dengan kualitas terbaik dan resmi melalui mitra FYPbyMe.</p>
-        <a href="https://s.hni.id/DHXIEXF" target="_blank" class="btn">Beli Sekarang</a>
+    <div class="grid">
+      
+      <!-- Produk 1 -->
+      <div class="product">
+        <img src="https://i.postimg.cc/3dkcJF7q/Sevel-2023-10-400x266.jpg" alt="SEVEL">
+        <div class="product-content">
+          <h2>SEVEL - ISI 10 (WIL. 1 & 2)</h2>
+          <a href="https://s.hni.id/DHXIEXF" class="btn" target="_blank">Beli Sekarang</a>
+        </div>
       </div>
+
+      <!-- Produk 2 -->
+      <div class="product">
+        <img src="https://i.postimg.cc/FRp8pRPD/matchalatte.png" alt="HANIA MATCHA LATTE">
+        <div class="product-content">
+          <h2>HANIA MATCHA LATTE</h2>
+          <a href="https://s.hni.id/61JXZVQ" class="btn" target="_blank">Beli Sekarang</a>
+        </div>
+      </div>
+
+      <!-- Produk 3 -->
+      <div class="product">
+        <img src="https://i.postimg.cc/wMbPKrYN/sabunkolagen.webp" alt="SABUN TRANSPARAN KOLAGEN">
+        <div class="product-content">
+          <h2>SABUN TRANSPARAN KOLAGEN (WIL 1&2)</h2>
+          <a href="https://s.hni.id/2XAPJ9U" class="btn" target="_blank">Beli Sekarang</a>
+        </div>
+      </div>
+
+      <!-- Produk 4 -->
+      <div class="product">
+        <img src="https://i.postimg.cc/T1PS46FG/minyakherbasinergi.webp" alt="MINYAK HERBA SINERGI 2020">
+        <div class="product-content">
+          <h2>MINYAK HERBA SINERGI 2020</h2>
+          <a href="https://s.hni.id/QJTE50Z" class="btn" target="_blank">Beli Sekarang</a>
+        </div>
+      </div>
+
     </div>
   </div>
 
   <footer>
-    © 2025 FYPbyMe — Semua hak dilindungi.
+    <p>Follow sosial media kami</p>
+    <div class="social">
+      <a href="https://www.instagram.com/fyibyme.id" target="_blank">Instagram</a> | 
+      <a href="https://www.tiktok.com/@fyibyme.id" target="_blank">TikTok</a>
+    </div>
+    <p>&copy; 2025 FYPbyMe</p>
   </footer>
-
 </body>
 </html>
