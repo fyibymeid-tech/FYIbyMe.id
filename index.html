@@ -54,12 +54,20 @@ header h1 {
   border-color: #2e7d72;
 }
 
+/* Section Kategori */
+.category-section {
+  padding: 20px;
+}
+.category-section h2 {
+  color: #2e7d72;
+  margin-bottom: 15px;
+}
+
 /* Grid Produk */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  padding: 20px;
 }
 .card {
   background: #fff;
@@ -82,7 +90,7 @@ header h1 {
   padding: 15px;
   text-align: center;
 }
-.category {
+.card-content .category {
   font-size: 12px;
   color: #fff;
   background: #4db6ac;
@@ -136,70 +144,88 @@ header h1 {
 </header>
 
 <div class="search-bar">
-  <input type="text" id="searchInput" placeholder="Cari kategori (Kesehatan, Minuman, Kecantikan, Sepatu)...">
+  <input type="text" id="searchInput" placeholder="Cari produk atau kategori...">
 </div>
 
-<section class="products" id="products">
-  <!-- Sepatu -->
-  <div class="card">
-    <img src="https://i.postimg.cc/gjpQ8d7z/Screenshot-20250827-141825.jpg" alt="ORTUSEIGHT BRISBANE Walking Shoes">
-    <div class="card-content">
-      <div class="category">(Sepatu)</div>
-      <h3>ORTUSEIGHT BRISBANE Walking Shoes</h3>
-      <a href="https://vt.tokopedia.com/t/ZSHG3chEor2FK-im49g/" target="_blank">Beli Produk</a>
+<!-- Sepatu -->
+<section class="category-section" id="sepatu">
+  <h2>Sepatu</h2>
+  <div class="products">
+    <div class="card">
+      <img src="https://i.postimg.cc/gjpQ8d7z/Screenshot-20250827-141825.jpg" alt="ORTUSEIGHT BRISBANE Walking Shoes">
+      <div class="card-content">
+        <div class="category">Sepatu</div>
+        <h3>ORTUSEIGHT BRISBANE Walking Shoes</h3>
+        <a href="https://vt.tokopedia.com/t/ZSHG3chEor2FK-im49g/" target="_blank">Beli Produk</a>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- Kesehatan -->
-  <div class="card">
-    <img src="https://i.postimg.cc/3dkcJF7q/Sevel-2023-10-400x266.jpg" alt="Sevel">
-    <div class="card-content">
-      <div class="category">(Kesehatan)</div>
-      <h3>SEVEL - ISI 10 (WIL.1 & 2)</h3>
-      <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
+<!-- Kesehatan -->
+<section class="category-section" id="kesehatan">
+  <h2>Kesehatan</h2>
+  <div class="products">
+    <div class="card">
+      <img src="https://i.postimg.cc/3dkcJF7q/Sevel-2023-10-400x266.jpg" alt="Sevel">
+      <div class="card-content">
+        <div class="category">Kesehatan</div>
+        <h3>SEVEL - ISI 10 (WIL.1 & 2)</h3>
+        <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://i.postimg.cc/T1PS46FG/minyakherbasinergi.webp" alt="Minyak Herba Sinergi">
+      <div class="card-content">
+        <div class="category">Kesehatan</div>
+        <h3>MINYAK HERBA SINERGI 2020</h3>
+        <a href="https://s.hni.id/QJTE50Z" target="_blank">Beli Produk</a>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="card">
-    <img src="https://i.postimg.cc/T1PS46FG/minyakherbasinergi.webp" alt="Minyak Herba Sinergi">
-    <div class="card-content">
-      <div class="category">(Kesehatan)</div>
-      <h3>MINYAK HERBA SINERGI 2020</h3>
-      <a href="https://s.hni.id/QJTE50Z" target="_blank">Beli Produk</a>
+<!-- Minuman -->
+<section class="category-section" id="minuman">
+  <h2>Minuman</h2>
+  <div class="products">
+    <div class="card">
+      <img src="https://i.postimg.cc/FRp8pRPD/matchalatte.png" alt="Hania Matcha Latte">
+      <div class="card-content">
+        <div class="category">Minuman</div>
+        <h3>HANIA MATCHA LATTE</h3>
+        <a href="https://s.hni.id/61JXZVQ" target="_blank">Beli Produk</a>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- Minuman -->
-  <div class="card">
-    <img src="https://i.postimg.cc/FRp8pRPD/matchalatte.png" alt="Hania Matcha Latte">
-    <div class="card-content">
-      <div class="category">(Minuman)</div>
-      <h3>HANIA MATCHA LATTE</h3>
-      <a href="https://s.hni.id/61JXZVQ" target="_blank">Beli Produk</a>
-    </div>
-  </div>
-
-  <!-- Kecantikan -->
-  <div class="card">
-    <img src="https://i.postimg.cc/wMbPKrYN/sabunkolagen.webp" alt="Sabun Kolagen">
-    <div class="card-content">
-      <div class="category">(Kecantikan)</div>
-      <h3>SABUN TRANSPARAN KOLAGEN</h3>
-      <a href="https://s.hni.id/2XAPJ9U" target="_blank">Beli Produk</a>
+<!-- Kecantikan -->
+<section class="category-section" id="kecantikan">
+  <h2>Kecantikan</h2>
+  <div class="products">
+    <div class="card">
+      <img src="https://i.postimg.cc/wMbPKrYN/sabunkolagen.webp" alt="Sabun Kolagen">
+      <div class="card-content">
+        <div class="category">Kecantikan</div>
+        <h3>SABUN TRANSPARAN KOLAGEN</h3>
+        <a href="https://s.hni.id/2XAPJ9U" target="_blank">Beli Produk</a>
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-// Filter Produk berdasarkan kategori
+// Filter Produk berdasarkan Nama produk + Kategori
 const searchInput = document.getElementById('searchInput');
-const products = document.getElementById('products').getElementsByClassName('card');
+const allCards = document.querySelectorAll('.card');
 
 searchInput.addEventListener('keyup', function() {
   const filter = searchInput.value.toLowerCase();
-  Array.from(products).forEach(function(card) {
+  allCards.forEach(card => {
+    const name = card.querySelector('h3').textContent.toLowerCase();
     const category = card.querySelector('.category').textContent.toLowerCase();
-    if(category.includes(filter)) {
+    if(name.includes(filter) || category.includes(filter)){
       card.style.display = '';
     } else {
       card.style.display = 'none';
