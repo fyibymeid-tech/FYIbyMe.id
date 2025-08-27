@@ -8,7 +8,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0; padding: 0;
-  background: #fdfbf6; /* warna kalem latar */
+  background: #f5f5f5; /* kalem & seragam */
   color: #333;
 }
 
@@ -24,7 +24,25 @@ header {
   border-bottom-right-radius: 15px;
 }
 
-/* Grid produk */
+/* Search Bar */
+.search-bar {
+  text-align: center;
+  padding: 20px;
+}
+.search-bar input {
+  padding: 10px 15px;
+  width: 60%;
+  max-width: 400px;
+  border: 2px solid #6c5b7b;
+  border-radius: 25px;
+  outline: none;
+  transition: 0.3s;
+}
+.search-bar input:focus {
+  border-color: #c06c84;
+}
+
+/* Grid Produk */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -32,13 +50,13 @@ header {
   padding: 20px;
 }
 .card {
-  background: #fff9f4; /* kalem peach */
+  background: #fff; /* seragam kalem */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
-.card:hover { 
+.card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
@@ -55,7 +73,7 @@ header {
 .category {
   font-size: 12px;
   color: #fff;
-  background: #355c7d; /* kalem biru */
+  background: #6c5b7b; /* warna header seragam */
   display: inline-block;
   padding: 3px 8px;
   border-radius: 12px;
@@ -64,12 +82,12 @@ header {
 .card-content h3 {
   font-size: 16px;
   margin: 10px 0;
-  color: #6c5b7b; /* kalem ungu */
+  color: #333;
 }
 .card-content a {
   display: inline-block;
   padding: 10px 18px;
-  background: #f67280; /* kalem pink */
+  background: #6c5b7b; /* warna header seragam */
   color: #fff;
   border-radius: 25px;
   text-decoration: none;
@@ -77,52 +95,19 @@ header {
   transition: 0.3s;
 }
 .card-content a:hover {
-  background: #c06c84; /* lebih gelap saat hover */
+  background: #c06c84; /* hover kalem */
 }
 
-/* Footer */
-footer {
-  padding: 40px 20px 20px 20px;
-  text-align: center;
-  background: #f0e5de; /* kalem krem */
-}
-.social {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 15px;
-}
-.social a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #333;
-  background: #e0e0e0;
-  padding: 8px 15px;
-  border-radius: 30px;
-  transition: 0.3s;
-}
-.social a:hover {
-  background: #6c5b7b;
-  color: #fff;
-}
-.social img {
-  width: 24px;
-  height: 24px;
-}
-.footer-text {
-  font-size: 14px;
-  color: #666;
-}
+/* Responsif */
 @media (max-width: 600px){
   .card img {
     height: 150px;
   }
   .card-content h3 {
     font-size: 14px;
+  }
+  .search-bar input {
+    width: 80%;
   }
 }
 </style>
@@ -131,7 +116,11 @@ footer {
 
 <header>FYIBYME.id</header>
 
-<section class="products">
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Cari kode atau nama produk...">
+</div>
+
+<section class="products" id="products">
   <div class="card">
     <img src="https://i.postimg.cc/3dkcJF7q/Sevel-2023-10-400x266.jpg" alt="Sevel">
     <div class="card-content">
@@ -169,17 +158,23 @@ footer {
   </div>
 </section>
 
-<footer>
-  <div class="social">
-    <a href="https://www.instagram.com/fyibyme.id" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">Instagram
-    </a>
-    <a href="https://www.tiktok.com/@fyibyme.id" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">TikTok
-    </a>
-  </div>
-  <div class="footer-text">&copy; 2025 FYIBYME.id</div>
-</footer>
+<script>
+// Filter Produk
+const searchInput = document.getElementById('searchInput');
+const products = document.getElementById('products').getElementsByClassName('card');
+
+searchInput.addEventListener('keyup', function() {
+  const filter = searchInput.value.toLowerCase();
+  Array.from(products).forEach(function(card) {
+    const text = card.querySelector('h3').textContent.toLowerCase();
+    if(text.includes(filter)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
+</script>
 
 </body>
-  </html>
+</html>
