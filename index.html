@@ -3,134 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FYIbyMe.id</title>
+  <title>Produk Unggulan HNI - FYIbyMe</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #fafafa;
-      color: #333;
-      line-height: 1.6;
-    }
-
+    body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333;}
     header {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background: linear-gradient(135deg, #ffffff, #f3f3f3);
-      border-bottom: 1px solid #e0e0e0;
+      background: #00897b; color: white; padding: 40px 20px; text-align: center;
     }
-
-    header h1 {
-      font-size: 2.6rem;
-      margin: 0;
-      color: #111;
+    header h1 {margin: 0; font-size: 28px;}
+    header p {margin: 10px 0 0; font-size: 16px;}
+    .container {max-width: 800px; margin: 40px auto; padding: 20px;}
+    .produk-card {
+      background: white; padding: 20px; border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center;
     }
-
-    header p {
-      font-size: 1.15rem;
-      color: #666;
-      margin-top: 8px;
+    .produk-card img {
+      width: 100%; max-width: 350px; border-radius: 10px; margin-bottom: 20px;
     }
-
+    .produk-card h2 {margin: 10px 0; color: #00897b;}
+    .produk-card p {font-size: 15px; line-height: 1.6;}
     .btn {
-      display: inline-block;
-      margin: 20px 10px 0;
-      padding: 12px 25px;
-      font-size: 1rem;
-      font-weight: 500;
-      color: #fff;
-      background-color: #222;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s ease;
+      display: inline-block; margin-top: 15px; padding: 12px 20px;
+      background: #00897b; color: white; border-radius: 5px;
+      text-decoration: none; font-weight: bold; transition: 0.3s;
     }
-
-    .btn:hover {
-      background-color: #444;
-    }
-
-    .section {
-      padding: 60px 20px;
-      max-width: 950px;
-      margin: auto;
-    }
-
-    .section h2 {
-      text-align: center;
-      font-size: 1.9rem;
-      margin-bottom: 25px;
-      color: #111;
-    }
-
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      margin-top: 35px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    }
-
+    .btn:hover {background: #00695c;}
     footer {
-      text-align: center;
-      padding: 25px 15px;
-      background: #f1f1f1;
-      color: #555;
-      font-size: 0.9rem;
-      margin-top: 50px;
+      margin-top: 50px; padding: 20px; background: #333;
+      color: white; text-align: center; font-size: 14px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>FYIbyMe.id</h1>
-    <p>Info singkat, padat, bermanfaat ✨</p>
-    <a href="https://www.tiktok.com/@fyibyme.id" target="_blank" class="btn">🎵 TikTok</a>
-    <a href="https://www.instagram.com/fyibyme.id" target="_blank" class="btn">📸 Instagram</a>
+    <h1>FYIbyMe x HNI</h1>
+    <p>Produk sehat, halal, dan bermanfaat untuk semua</p>
   </header>
 
-  <section class="section">
-    <h2>Tentang</h2>
-    <p style="text-align:center; max-width:720px; margin:auto;">
-      FYIbyMe.id hadir untuk berbagi informasi singkat, review, tips, dan update tren 
-      seputar dunia digital, tech, lifestyle, dan insight menarik lainnya yang bisa kamu simak dengan cepat. 
-      Karena buat kita, sharing itu bukan cuma info, tapi juga cara terhubung. #FYIbyMe
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Kategori Konten</h2>
-    <div class="categories">
-      <div class="card">
-        <h3>📱 Media Sosial</h3>
-        <p>Tips & update terbaru seputar TikTok, IG, dan platform lainnya.</p>
-      </div>
-      <div class="card">
-        <h3>⚡ Tech & Gadget</h3>
-        <p>Review singkat, plus minus, serta rekomendasi gadget terkini.</p>
-      </div>
-      <div class="card">
-        <h3>🌍 Lifestyle</h3>
-        <p>Random thought, daily tips, dan inspirasi ringan yang relate.</p>
-      </div>
+  <div class="container">
+    <div class="produk-card">
+      <img src="https://hni.net.id/images/products/produk1.jpg" alt="Produk HNI">
+      <h2>Produk Unggulan HNI</h2>
+      <p>
+        Produk herbal berkualitas dari HNI untuk mendukung kesehatan tubuh Anda.  
+        Dengan bahan alami, halal, dan terpercaya, produk ini cocok untuk kebutuhan harian keluarga.  
+      </p>
+      <a href="https://s.hni.id/DHXIEXF" class="btn" target="_blank">Beli Sekarang</a>
     </div>
-  </section>
+  </div>
 
   <footer>
-    © 2025 FYIbyMe.id — All rights reserved.
+    <p>© 2025 FYIbyMe | HNI Partner Resmi</p>
   </footer>
 
 </body>
