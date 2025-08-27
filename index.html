@@ -8,7 +8,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0; padding: 0;
-  background: #f5f5f5;
+  background: #fdfbf6;
   color: #333;
 }
 
@@ -16,12 +16,21 @@ body {
 header {
   background: #6c5b7b;
   color: #fff;
-  padding: 20px;
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+header img {
+  height: 40px;
+}
+header h1 {
+  font-size: 28px;
+  margin: 0;
+  font-weight: bold;
 }
 
 /* Search Bar */
@@ -109,19 +118,26 @@ header {
   .search-bar input {
     width: 80%;
   }
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 </style>
 </head>
 <body>
 
-<header>FYIBYME.id</header>
+<header>
+  <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="FYIBYME Logo">
+  <h1>FYIBYME.id</h1>
+</header>
 
 <div class="search-bar">
   <input type="text" id="searchInput" placeholder="Cari kode atau nama produk...">
 </div>
 
 <section class="products" id="products">
-  <!-- Produk Baru di Atas -->
+  <!-- Sepatu -->
   <div class="card">
     <img src="https://i.postimg.cc/gjpQ8d7z/Screenshot-20250827-141825.jpg" alt="ORTUSEIGHT BRISBANE Walking Shoes">
     <div class="card-content">
@@ -131,7 +147,7 @@ header {
     </div>
   </div>
 
-  <!-- Produk Sebelumnya -->
+  <!-- Kesehatan -->
   <div class="card">
     <img src="https://i.postimg.cc/3dkcJF7q/Sevel-2023-10-400x266.jpg" alt="Sevel">
     <div class="card-content">
@@ -142,6 +158,16 @@ header {
   </div>
 
   <div class="card">
+    <img src="https://i.postimg.cc/T1PS46FG/minyakherbasinergi.webp" alt="Minyak Herba Sinergi">
+    <div class="card-content">
+      <div class="category">Kesehatan</div>
+      <h3>MINYAK HERBA SINERGI 2020</h3>
+      <a href="https://s.hni.id/QJTE50Z" target="_blank">Beli Produk</a>
+    </div>
+  </div>
+
+  <!-- Minuman -->
+  <div class="card">
     <img src="https://i.postimg.cc/FRp8pRPD/matchalatte.png" alt="Hania Matcha Latte">
     <div class="card-content">
       <div class="category">Minuman</div>
@@ -150,21 +176,13 @@ header {
     </div>
   </div>
 
+  <!-- Kecantikan -->
   <div class="card">
     <img src="https://i.postimg.cc/wMbPKrYN/sabunkolagen.webp" alt="Sabun Kolagen">
     <div class="card-content">
       <div class="category">Kecantikan</div>
       <h3>SABUN TRANSPARAN KOLAGEN</h3>
       <a href="https://s.hni.id/2XAPJ9U" target="_blank">Beli Produk</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://i.postimg.cc/T1PS46FG/minyakherbasinergi.webp" alt="Minyak Herba Sinergi">
-    <div class="card-content">
-      <div class="category">Kesehatan</div>
-      <h3>MINYAK HERBA SINERGI 2020</h3>
-      <a href="https://s.hni.id/QJTE50Z" target="_blank">Beli Produk</a>
     </div>
   </div>
 </section>
