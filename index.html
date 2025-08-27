@@ -1,4 +1,4 @@
-p<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -7,8 +7,8 @@ p<!DOCTYPE html>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --primary: #4f9da6;  /* warna utama sesuai vibe logo */
-      --secondary: #f0f4f8; 
+      --primary: #4f9da6;   /* warna utama tosca */
+      --secondary: #f0f4f8;
       --text: #333;
       --white: #fff;
     }
@@ -45,6 +45,31 @@ p<!DOCTYPE html>
       max-width: 1100px;
       margin: auto;
       padding: 20px;
+    }
+
+    /* Search Bar */
+    .search-bar {
+      text-align: center;
+      margin: 20px 0 30px;
+    }
+
+    .search-bar input {
+      padding: 12px 18px;
+      width: 80%;
+      max-width: 400px;
+      border: 2px solid var(--primary);
+      border-radius: 25px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .category {
+      margin: 40px 0 20px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--primary);
+      border-left: 6px solid var(--primary);
+      padding-left: 10px;
     }
 
     .grid {
@@ -138,49 +163,57 @@ p<!DOCTYPE html>
 </head>
 <body>
   <header>
-    <h1>FYPbyMe.id</h1>
+    <h1>FYPbyMe</h1>
     <p>Rekomendasi Produk Pilihan & Info Menarik</p>
   </header>
 
   <div class="container">
+    <!-- Search -->
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Cari kode atau nama produk...">
+    </div>
+
+    <!-- Minuman -->
+    <div class="category">🍵 Minuman</div>
     <div class="grid">
-      
-      <!-- Produk 1 -->
-      <div class="product">
+      <div class="product" data-name="SEVEL" data-code="HNI-001">
         <img src="https://i.postimg.cc/3dkcJF7q/Sevel-2023-10-400x266.jpg" alt="SEVEL">
         <div class="product-content">
           <h2>SEVEL - ISI 10 (WIL. 1 & 2)</h2>
           <a href="https://s.hni.id/DHXIEXF" class="btn" target="_blank">Beli Sekarang</a>
         </div>
       </div>
-
-      <!-- Produk 2 -->
-      <div class="product">
+      <div class="product" data-name="HANIA MATCHA LATTE" data-code="HNI-002">
         <img src="https://i.postimg.cc/FRp8pRPD/matchalatte.png" alt="HANIA MATCHA LATTE">
         <div class="product-content">
           <h2>HANIA MATCHA LATTE</h2>
           <a href="https://s.hni.id/61JXZVQ" class="btn" target="_blank">Beli Sekarang</a>
         </div>
       </div>
+    </div>
 
-      <!-- Produk 3 -->
-      <div class="product">
+    <!-- Perawatan Tubuh -->
+    <div class="category">🧼 Perawatan Tubuh</div>
+    <div class="grid">
+      <div class="product" data-name="SABUN TRANSPARAN KOLAGEN" data-code="HNI-003">
         <img src="https://i.postimg.cc/wMbPKrYN/sabunkolagen.webp" alt="SABUN TRANSPARAN KOLAGEN">
         <div class="product-content">
           <h2>SABUN TRANSPARAN KOLAGEN (WIL 1&2)</h2>
           <a href="https://s.hni.id/2XAPJ9U" class="btn" target="_blank">Beli Sekarang</a>
         </div>
       </div>
+    </div>
 
-      <!-- Produk 4 -->
-      <div class="product">
+    <!-- Kesehatan -->
+    <div class="category">💊 Kesehatan</div>
+    <div class="grid">
+      <div class="product" data-name="MINYAK HERBA SINERGI" data-code="HNI-004">
         <img src="https://i.postimg.cc/T1PS46FG/minyakherbasinergi.webp" alt="MINYAK HERBA SINERGI 2020">
         <div class="product-content">
           <h2>MINYAK HERBA SINERGI 2020</h2>
           <a href="https://s.hni.id/QJTE50Z" class="btn" target="_blank">Beli Sekarang</a>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -192,5 +225,24 @@ p<!DOCTYPE html>
     </div>
     <p>&copy; 2025 FYPbyMe</p>
   </footer>
+
+  <script>
+    // Search filter
+    const searchInput = document.getElementById('search');
+    const products = document.querySelectorAll('.product');
+
+    searchInput.addEventListener('keyup', function() {
+      const value = this.value.toLowerCase();
+      products.forEach(product => {
+        const name = product.getAttribute('data-name').toLowerCase();
+        const code = product.getAttribute('data-code').toLowerCase();
+        if (name.includes(value) || code.includes(value)) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
