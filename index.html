@@ -6,90 +6,111 @@
 <title>FYIBYME.id - Produk Pilihan</title>
 <style>
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0; padding: 0;
-  background: #f5f5f5;
+  background: #f9f9f9;
   color: #333;
 }
 
 /* Header */
 header {
-  background: #2c3e50; /* abu navy elegan */
+  background: #34495e;
   color: #fff;
-  padding: 20px;
+  padding: 25px 20px;
   text-align: center;
   font-size: 28px;
-  font-weight: bold;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
 }
 
 /* Profil */
 .profile {
   text-align: center;
-  padding: 30px 20px;
+  padding: 35px 20px 25px;
 }
 .profile img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #2c3e50;
+  border: 4px solid #16a085;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 .profile h2 {
   margin: 15px 0 8px;
-  font-size: 22px;
-  color: #2c3e50;
+  font-size: 24px;
+  font-weight: 600;
+  color: #34495e;
 }
 .profile p {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 500px;
+  margin: 0 auto 15px;
   font-size: 15px;
-  color: #555;
   line-height: 1.6;
+  color: #555;
+}
+.social-links a {
+  margin: 0 10px;
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  background: #16a085;
+  color: #fff;
+  transition: 0.3s;
+}
+.social-links a:hover {
+  background: #1abc9c;
 }
 
 /* Search Bar */
 .search-bar {
   text-align: center;
-  padding: 20px;
+  padding: 15px;
 }
 .search-bar input {
-  padding: 10px 15px;
-  width: 60%;
-  max-width: 400px;
-  border: 2px solid #2c3e50;
+  padding: 12px 18px;
+  width: 65%;
+  max-width: 420px;
+  border: 2px solid #ddd;
   border-radius: 25px;
   outline: none;
   transition: 0.3s;
+  font-size: 14px;
 }
 .search-bar input:focus {
-  border-color: #2980b9;
+  border-color: #16a085;
+  box-shadow: 0 0 8px rgba(22,160,133,0.3);
 }
 
 /* Grid Produk */
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 20px;
   padding: 20px;
 }
 .card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
 }
 .card img {
   width: 100%;
-  height: 180px;
+  height: 190px;
   object-fit: contain;
-  background: #fdfbf6;
+  background: #fefefe;
 }
 .card-content {
   padding: 15px;
@@ -98,50 +119,55 @@ header {
 .category {
   font-size: 12px;
   color: #fff;
-  background: #2c3e50;
+  background: #16a085;
   display: inline-block;
-  padding: 3px 8px;
-  border-radius: 12px;
-  margin-bottom: 5px;
+  padding: 4px 10px;
+  border-radius: 14px;
+  margin-bottom: 8px;
 }
 .card-content h3 {
-  font-size: 16px;
+  font-size: 15px;
   margin: 10px 0;
-  color: #333;
+  color: #2c3e50;
+  min-height: 40px;
 }
 .card-content a {
   display: inline-block;
-  padding: 10px 18px;
-  background: #2c3e50;
+  padding: 9px 18px;
+  background: #16a085;
   color: #fff;
   border-radius: 25px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 14px;
   transition: 0.3s;
 }
 .card-content a:hover {
-  background: #2980b9;
+  background: #1abc9c;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 20px;
-  background: #2c3e50;
+  padding: 18px;
+  background: #34495e;
   color: #fff;
-  margin-top: 30px;
+  margin-top: 40px;
+  font-size: 13px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
 }
 
 /* Responsif */
 @media (max-width: 600px){
   .card img {
-    height: 150px;
+    height: 160px;
   }
   .card-content h3 {
     font-size: 14px;
   }
   .search-bar input {
-    width: 80%;
+    width: 85%;
   }
 }
 </style>
@@ -153,8 +179,11 @@ footer {
 <section class="profile">
   <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Profil FYIBYME.id">
   <h2>FYIBYME.id</h2>
-  <p>FYIBYME.id adalah platform sederhana untuk berbagi produk pilihan mulai dari kesehatan, kecantikan, minuman, hingga fashion. 
-  Kami hadir dengan tampilan yang kalem, elegan, dan mudah digunakan agar kamu bisa menemukan produk favoritmu dengan cepat dan praktis.</p>
+  <p>FYIBYME.id menghadirkan pilihan produk lifestyle & kesehatan dengan tampilan simpel, elegan, dan terpercaya.</p>
+  <div class="social-links">
+    <a href="https://www.tiktok.com/@fyibyme.id?_t=ZS-8zF64QjRJ03&_r=1" target="_blank">TikTok</a>
+    <a href="https://www.instagram.com/fyibyme.id?igsh=eWd6a3FkcWxjNm1" target="_blank">Instagram</a>
+  </div>
 </section>
 
 <div class="search-bar">
@@ -210,17 +239,17 @@ footer {
   </div>
 
   <div class="card">
-    <img src="https://i.postimg.cc/fbLSTKvF/Screenshot-20250828-080803.jpg" alt="Brisbane Shoes">
+    <img src="https://i.postimg.cc/PxJsvkzR/Screenshot-20250827-141825.jpg" alt="Ortuseight Brisbane Walking Shoes">
     <div class="card-content">
       <div class="category">Sepatu</div>
-      <h3>BRISBANE SHOES</h3>
+      <h3>ORTUSEIGHT BRISBANE WALKING SHOES</h3>
       <a href="https://vt.tokopedia.com/t/ZSHGEFaUva42E-zyet4/" target="_blank">Beli Produk</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 FYIBYME.id | Hubungi Kami</p>
+  <p>© 2025 FYIBYME.id | All Rights Reserved</p>
 </footer>
 
 <script>
