@@ -4,66 +4,106 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FYIbyMe.id</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #b7c9d3;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #d3e1e6;
+      color: #111;
       text-align: center;
     }
-    .container {
-      max-width: 500px;
-      margin: auto;
+    .page {
+      display: none;
+      min-height: 100vh;
       padding: 20px;
     }
-    .logo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin: 20px auto;
+    .active {
       display: block;
     }
-    h1 {
-      font-size: 24px;
-      margin: 10px 0;
-    }
-    p {
-      font-size: 14px;
-      color: #333;
+    img.logo {
+      width: 120px;
+      border-radius: 50%;
+      margin: 20px 0;
     }
     .btn {
       display: block;
-      margin: 15px auto;
-      padding: 12px;
-      width: 80%;
-      border-radius: 20px;
-      background: white;
+      margin: 10px auto;
+      padding: 12px 20px;
+      border-radius: 25px;
       border: none;
+      background: white;
       font-size: 16px;
-      font-weight: bold;
-      text-decoration: none;
-      color: #000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
       transition: 0.3s;
     }
     .btn:hover {
-      transform: scale(1.05);
+      background: #b2cdd6;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
+      margin: 15px auto;
+      width: 90%;
+      max-width: 300px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      background: #111;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .card a:hover {
+      background: #444;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="FYIbyMe.id" class="logo">
-    <h1>FYIbyMe.id</h1>
-    <p>FYI guys, info singkat + jujur ✍️ 👟 Lifestyle | Gadget | Tips harian 🎥 Review santai, no ribet #FYIbyMeid</p>
 
-    <a href="https://www.tiktok.com/@username" target="_blank" class="btn"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-    <a href="https://www.instagram.com/username" target="_blank" class="btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
-    
-    <!-- Tombol ke produk -->
-    <a href="produk.html" class="btn"><i class="fa-solid fa-shop"></i> Lihat Produk Saya</a>
+  <!-- HALAMAN SOSIAL MEDIA -->
+  <div class="page active" id="home">
+    <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="FYIbyMe.id" class="logo">
+    <h2>FYIbyMe.id</h2>
+    <p>FYI guys, info singkat + jujur ✍ Lifestyle | Gadget | Tips harian 🎥</p>
+    <button class="btn" onclick="window.open('https://www.tiktok.com/@akunmu')">TikTok</button>
+    <button class="btn" onclick="window.open('https://www.instagram.com/akunmu')">Instagram</button>
+    <button class="btn" onclick="showPage('produk')">👉 Lihat Produk Saya</button>
   </div>
+
+  <!-- HALAMAN PRODUK -->
+  <div class="page" id="produk">
+    <h2>Produk Pilihan FYIbyMe.id</h2>
+
+    <div class="card">
+      <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Produk 1">
+      <h3>SEVEL - ISI 10 (WIL.1 X 2)</h3>
+      <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
+    </div>
+
+    <div class="card">
+      <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Produk 2">
+      <h3>Kopi Herbal</h3>
+      <a href="https://s.hni.id/XXXXX" target="_blank">Beli Produk</a>
+    </div>
+
+    <button class="btn" onclick="showPage('home')">⬅ Kembali</button>
+  </div>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
