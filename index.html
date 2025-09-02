@@ -3,228 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FYIBYME.id - Produk Pilihan</title>
+  <title>FYIBYME.id</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #cce7df, #7fbf9e);
+      margin: 0; padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f7f7f7;
       color: #333;
-      scroll-behavior: smooth;
     }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    header {
+      background: linear-gradient(135deg, #1abc9c, #16a085);
+      color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 60px 20px;
     }
-
-    .hero img {
-      width: 140px;
-      height: 140px;
+    header img {
+      width: 120px; height: 120px;
       border-radius: 50%;
-      border: 3px solid white;
+      border: 4px solid #fff;
       margin-bottom: 15px;
     }
-
-    .hero h1 {
-      font-size: 32px;
-      color: #064420;
-      margin: 10px 0;
-    }
-
-    .hero p {
-      font-size: 16px;
-      max-width: 500px;
-      margin: auto;
-      color: #333;
-    }
-
-    .social-icons {
-      margin: 20px 0;
-    }
-
-    .social-icons a {
-      margin: 0 12px;
-      font-size: 28px;
-      color: #064420;
-      transition: transform 0.3s, color 0.3s;
-    }
-
-    .social-icons a:hover {
-      color: #0a6340;
-      transform: scale(1.2);
-    }
-
-    .hero .next-section {
-      margin-top: 30px;
-    }
-
-    .hero .next-section a {
+    header h1 { margin: 10px 0; font-size: 28px; }
+    header p { font-size: 14px; opacity: 0.9; margin-bottom: 20px; }
+    .btn {
       display: inline-block;
-      padding: 12px 24px;
-      border-radius: 25px;
-      background: #0a6340;
-      color: white;
-      font-size: 15px;
+      padding: 12px 20px;
+      margin: 5px;
+      border-radius: 12px;
+      background: #fff;
+      color: #16a085;
+      font-weight: bold;
       text-decoration: none;
-      transition: background 0.3s, transform 0.3s;
+      transition: 0.3s;
     }
-
-    .hero .next-section a:hover {
-      background: #097a50;
-      transform: scale(1.05);
+    .btn:hover {
+      background: #16a085;
+      color: #fff;
+      transform: translateY(-3px);
     }
-
-    /* Produk Section */
-    .products {
-      min-height: 100vh;
-      padding: 60px 20px;
-      background: #f9f9f9;
-    }
-
-    .products h2 {
-      text-align: center;
-      font-size: 26px;
-      color: #064420;
-      margin-bottom: 40px;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      width: 90%;
-      max-width: 1100px;
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
       margin: auto;
     }
-
+    section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #16a085;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
     .card {
       background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
+      transition: 0.3s;
     }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.2);
-    }
-
+    .card:hover { transform: translateY(-5px); }
     .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: contain;
-      background: #f4f4f4;
-      padding: 20px;
+      width: 100px;
+      margin-bottom: 10px;
     }
-
-    .card-content {
-      padding: 15px;
-    }
-
-    .card-content .category {
-      font-size: 13px;
-      font-weight: bold;
-      color: #0a6340;
-      margin-bottom: 8px;
-    }
-
-    .card-content h3 {
-      font-size: 16px;
-      margin-bottom: 12px;
-      color: #064420;
-    }
-
-    .card-content a {
+    .card h3 { margin: 10px 0; font-size: 18px; }
+    .card a {
       display: inline-block;
-      padding: 10px 18px;
-      border-radius: 25px;
-      background: #0a6340;
-      color: white;
-      font-size: 14px;
+      padding: 10px 15px;
+      background: #16a085;
+      color: #fff;
+      border-radius: 8px;
       text-decoration: none;
-      transition: background 0.3s, transform 0.3s;
+      transition: 0.3s;
     }
-
-    .card-content a:hover {
-      background: #097a50;
-      transform: scale(1.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #333;
-      background: #e8f5f0;
-    }
+    .card a:hover { background: #1abc9c; }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="FYIBYME.id">
+
+  <!-- Bagian Profil / Sosial Media -->
+  <header>
+    <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Logo FYIBYME.id">
     <h1>FYIBYME.id</h1>
-    <p>FYI guys, info singkat + jujur 📝 👟 Lifestyle | Gadget | Tips harian 🎥 Review santai, no ribet #FYIbyMeid</p>
-    
-    <div class="social-icons">
-      <a href="https://www.tiktok.com/@fyibymeid" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://www.instagram.com/fyibymeid" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
+    <p>Akun ini berisi informasi, sosial media, dan produk pilihan FYIBYME.id</p>
 
-    <div class="next-section">
-      <a href="#produk">Lihat Produk</a>
-    </div>
-  </section>
+    <a href="https://www.tiktok.com/@fyibymeid" target="_blank" class="btn">
+      <i class="fab fa-tiktok"></i> TikTok
+    </a>
+    <a href="https://www.instagram.com/fyibymeid" target="_blank" class="btn">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+  </header>
 
-  <!-- Produk Section -->
-  <section class="products" id="produk">
+  <!-- Bagian Produk -->
+  <section>
     <h2>Produk Pilihan</h2>
-    <div class="product-grid">
+    <div class="grid">
       <!-- Produk 1 -->
       <div class="card">
-        <img src="https://i.postimg.cc/0jLqkW0V/sevel.jpg" alt="SEVEL - ISI 10">
-        <div class="card-content">
-          <div class="category">Kesehatan</div>
-          <h3>SEVEL - ISI 10 (WIL.1 X 2)</h3>
-          <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
-        </div>
+        <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Produk">
+        <h3>SEVEL - ISI 10 (WIL.1 X 2)</h3>
+        <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
       </div>
 
       <!-- Produk 2 -->
       <div class="card">
-        <img src="https://i.postimg.cc/kXjJHnsV/kopi.jpg" alt="Kopi Herbal 7">
-        <div class="card-content">
-          <div class="category">Minuman</div>
-          <h3>Kopi Herbal 7</h3>
-          <a href="https://s.hni.id/ABCD123" target="_blank">Beli Produk</a>
-        </div>
+        <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Produk">
+        <h3>QURMA - ISI 10 (WIL.2)</h3>
+        <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
       </div>
 
       <!-- Produk 3 -->
       <div class="card">
-        <img src="https://i.postimg.cc/QM3yC4bM/sabun.jpg" alt="Sabun Sehat">
-        <div class="card-content">
-          <div class="category">Perawatan</div>
-          <h3>Sabun Sehat</h3>
-          <a href="https://s.hni.id/XYZ789" target="_blank">Beli Produk</a>
-        </div>
+        <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Produk">
+        <h3>Kopi HPAI</h3>
+        <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
       </div>
+
+      <!-- Produk 4 -->
+      <div class="card">
+        <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Produk">
+        <h3>Minyak Herba Sinergi</h3>
+        <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
+      </div>
+
+      <!-- Tambahkan produk lain di sini -->
     </div>
   </section>
 
-  <footer>
-    © 2025 FYIBYME.id - All rights reserved.
-  </footer>
 </body>
 </html>
