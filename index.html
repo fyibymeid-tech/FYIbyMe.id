@@ -12,33 +12,37 @@
       padding: 0;
       background: linear-gradient(135deg, #cce7df, #7fbf9e);
       color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-    }
-
-    header {
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 20px;
     }
 
-    header img {
-      width: 120px;
-      height: 120px;
+    .hero img {
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      margin-bottom: 15px;
       border: 3px solid white;
+      margin-bottom: 15px;
     }
 
-    header h1 {
-      margin: 10px 0;
-      font-size: 28px;
+    .hero h1 {
+      font-size: 32px;
       color: #064420;
+      margin: 10px 0;
     }
 
-    header p {
-      font-size: 15px;
-      max-width: 400px;
+    .hero p {
+      font-size: 16px;
+      max-width: 500px;
       margin: auto;
       color: #333;
     }
@@ -59,13 +63,47 @@
       transform: scale(1.2);
     }
 
+    .hero .next-section {
+      margin-top: 30px;
+    }
+
+    .hero .next-section a {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 25px;
+      background: #0a6340;
+      color: white;
+      font-size: 15px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .hero .next-section a:hover {
+      background: #097a50;
+      transform: scale(1.05);
+    }
+
+    /* Produk Section */
     .products {
+      min-height: 100vh;
+      padding: 60px 20px;
+      background: #f9f9f9;
+    }
+
+    .products h2 {
+      text-align: center;
+      font-size: 26px;
+      color: #064420;
+      margin-bottom: 40px;
+    }
+
+    .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       width: 90%;
       max-width: 1100px;
-      margin: 30px 0 50px;
+      margin: auto;
     }
 
     .card {
@@ -124,52 +162,63 @@
     }
 
     footer {
-      margin: 30px 0;
+      text-align: center;
+      padding: 20px;
       font-size: 14px;
       color: #333;
+      background: #e8f5f0;
     }
   </style>
 </head>
 <body>
-  <header>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
     <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="FYIBYME.id">
     <h1>FYIBYME.id</h1>
     <p>FYI guys, info singkat + jujur 📝 👟 Lifestyle | Gadget | Tips harian 🎥 Review santai, no ribet #FYIbyMeid</p>
-  </header>
-
-  <div class="social-icons">
-    <a href="https://www.tiktok.com/@fyibymeid" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://www.instagram.com/fyibymeid" target="_blank"><i class="fab fa-instagram"></i></a>
-  </div>
-
-  <section class="products">
-    <!-- Produk 1 -->
-    <div class="card">
-      <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Produk FYIBYME.id">
-      <div class="card-content">
-        <div class="category">Kesehatan</div>
-        <h3>SEVEL - ISI 10 (WIL.1 X 2)</h3>
-        <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
-      </div>
+    
+    <div class="social-icons">
+      <a href="https://www.tiktok.com/@fyibymeid" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/fyibymeid" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
 
-    <!-- Produk 2 -->
-    <div class="card">
-      <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Produk FYIBYME.id">
-      <div class="card-content">
-        <div class="category">Minuman</div>
-        <h3>Kopi Herbal 7</h3>
-        <a href="https://s.hni.id/ABCD123" target="_blank">Beli Produk</a>
-      </div>
+    <div class="next-section">
+      <a href="#produk">Lihat Produk</a>
     </div>
+  </section>
 
-    <!-- Produk 3 -->
-    <div class="card">
-      <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Produk FYIBYME.id">
-      <div class="card-content">
-        <div class="category">Perawatan</div>
-        <h3>Sabun Sehat</h3>
-        <a href="https://s.hni.id/XYZ789" target="_blank">Beli Produk</a>
+  <!-- Produk Section -->
+  <section class="products" id="produk">
+    <h2>Produk Pilihan</h2>
+    <div class="product-grid">
+      <!-- Produk 1 -->
+      <div class="card">
+        <img src="https://i.postimg.cc/0jLqkW0V/sevel.jpg" alt="SEVEL - ISI 10">
+        <div class="card-content">
+          <div class="category">Kesehatan</div>
+          <h3>SEVEL - ISI 10 (WIL.1 X 2)</h3>
+          <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
+        </div>
+      </div>
+
+      <!-- Produk 2 -->
+      <div class="card">
+        <img src="https://i.postimg.cc/kXjJHnsV/kopi.jpg" alt="Kopi Herbal 7">
+        <div class="card-content">
+          <div class="category">Minuman</div>
+          <h3>Kopi Herbal 7</h3>
+          <a href="https://s.hni.id/ABCD123" target="_blank">Beli Produk</a>
+        </div>
+      </div>
+
+      <!-- Produk 3 -->
+      <div class="card">
+        <img src="https://i.postimg.cc/QM3yC4bM/sabun.jpg" alt="Sabun Sehat">
+        <div class="card-content">
+          <div class="category">Perawatan</div>
+          <h3>Sabun Sehat</h3>
+          <a href="https://s.hni.id/XYZ789" target="_blank">Beli Produk</a>
+        </div>
       </div>
     </div>
   </section>
