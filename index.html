@@ -1,102 +1,372 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FYIBYME.id</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #f9fafb; color: #333; }
-    header { background: linear-gradient(135deg,#16a085,#1abc9c); color: white; text-align: center; padding: 3rem 1rem; }
-    header img { width: 120px; border-radius: 50%; margin-bottom: 1rem; }
-    header h1 { font-size: 1.8rem; margin-bottom: .5rem; }
-    header p { max-width: 600px; margin: auto; line-height: 1.6; }
-    .socials { margin: 1.5rem 0; }
-    .socials a { display: inline-block; margin: 0 .5rem; padding: .6rem 1.2rem; border-radius: 30px; background: white; color: #16a085; font-weight: bold; text-decoration: none; transition: 0.3s; }
-    .socials a:hover { background: #f0f0f0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FYIBYME.id - Produk Pilihan</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0; padding: 0;
+  background: #f8f9fa;
+  color: #333;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
-    main { padding: 2rem 1rem; max-width: 1000px; margin: auto; }
-    .search-bar { text-align: center; margin-bottom: 2rem; }
-    .search-bar input { width: 90%; max-width: 400px; padding: .7rem 1rem; border: 1px solid #ddd; border-radius: 30px; }
+/* Header */
+header {
+  background: linear-gradient(90deg, #1abc9c, #16a085, #34495e);
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+  color: #fff;
+  padding: 26px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  letter-spacing: 1px;
+}
+header i { font-size: 28px; color: #fff; }
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
 
-    .products { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 1.5rem; }
-    .card { background: white; border-radius: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden; transition: 0.3s; }
-    .card:hover { transform: translateY(-5px); }
-    .card img { width: 100%; height: 180px; object-fit: cover; }
-    .card-content { padding: 1rem; text-align: center; }
-    .category { display: inline-block; padding: .3rem .7rem; border-radius: 20px; background: #16a085; color: white; font-size: .8rem; margin-bottom: .5rem; }
-    .card h3 { font-size: 1rem; margin-bottom: 1rem; }
-    .card a { display: inline-block; background: #2c3e50; color: white; padding: .6rem 1.2rem; border-radius: 8px; text-decoration: none; transition: 0.3s; }
-    .card a:hover { background: #1abc9c; }
+/* Profil */
+.profile {
+  text-align: center;
+  padding: 40px 20px 20px;
+  animation: fadeIn 1.2s ease;
+}
+.profile img {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #1abc9c;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: 0.4s;
+}
+.profile img:hover { transform: scale(1.08); box-shadow: 0 8px 18px rgba(26,188,156,0.5); }
+.profile h2 { margin: 15px 0 6px; font-size: 24px; font-weight: 700; color: #34495e; }
 
-    footer { background: #2c3e50; color: white; text-align: center; padding: 1rem; margin-top: 2rem; font-size: .9rem; }
-  </style>
+/* Deskripsi animasi */
+.tagline {
+  max-width: 550px;
+  margin: 0 auto 15px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  min-height: 24px;
+  position: relative;
+  text-align: center;
+}
+.tagline span {
+  display: none;
+  animation: fade 1s ease-in-out;
+}
+.tagline span.active {
+  display: inline-block;
+}
+@keyframes fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Sosial media */
+.social-links a {
+  margin: 0 8px;
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  background: #1abc9c;
+  color: #fff;
+  transition: 0.3s;
+}
+.social-links a:hover { background: #16a085; transform: scale(1.05); }
+.social-links a i { margin-right: 6px; }
+
+/* Search Bar */
+.search-bar {
+  text-align: center;
+  padding: 20px;
+}
+.search-bar input {
+  padding: 12px 18px 12px 40px;
+  width: 65%;
+  max-width: 450px;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 15px;
+  background: #fff url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat 12px center;
+  background-size: 18px;
+}
+.search-bar input:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 0 10px rgba(26,188,156,0.4);
+}
+
+/* Judul kategori */
+.category-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 35px 20px 15px;
+  color: #1abc9c;
+  text-transform: uppercase;
+  border-left: 6px solid #16a085;
+  padding-left: 10px;
+}
+
+/* Grid Produk */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 10px 30px 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+.card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transition: 0.4s;
+  transform: translateY(40px);
+  opacity: 0;
+}
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(26,188,156,0.25);
+}
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  background: #fafafa;
+  transition: 0.3s;
+}
+.card:hover img { transform: scale(1.05); }
+.card-content { padding: 15px; text-align: center; }
+.category {
+  font-size: 12px;
+  color: #fff;
+  background: #1abc9c;
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+.card-content h3 {
+  font-size: 15px;
+  margin: 10px 0;
+  color: #34495e;
+  min-height: 36px;
+}
+.card-content a {
+  display: inline-block;
+  padding: 9px 18px;
+  background: #34495e;
+  color: #fff;
+  border-radius: 22px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  transition: 0.3s;
+}
+.card-content a:hover {
+  background: #1abc9c;
+  box-shadow: 0 5px 15px rgba(26,188,156,0.4);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 18px;
+  background: #34495e;
+  color: #fff;
+  margin-top: 40px;
+  font-size: 13px;
+}
+
+/* Animations */
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+/* Responsif */
+@media (max-width: 600px){
+  .card img { height: 150px; }
+  .card-content h3 { font-size: 13px; }
+  .search-bar input { width: 85%; }
+}
+</style>
 </head>
 <body>
-  <header>
-    <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="FYIBYME.id">
-    <h1>Selamat Datang di FYIBYME.id</h1>
-    <p>Berbagi info singkat, jujur, bermanfaat dan produk pilihan yang simpel untuk kebutuhan sehari-hari.<br>
-    Lifestyle | Tech | Tips | Random Thought</p>
-    <div class="socials">
-      <a href="https://www.tiktok.com/@username" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-      <a href="https://www.instagram.com/username" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+
+<header><i class="fas fa-store"></i> FYIBYME.id</header>
+
+<section class="profile">
+  <img src="https://i.postimg.cc/GmNzFqyH/Screenshot-20250827-134330.jpg" alt="Profil FYIBYME.id">
+  <h2>FYIBYME.id</h2>
+  <p class="tagline">
+    <span>🌟 Berbagi produk pilihan simpel, bermanfaat, dan mudah dijangkau.</span>
+    <span>💡 Rekomendasi produk terpercaya, praktis, dan jadi solusi harianmu.</span>
+    <span>🛍️ FYIBYME.id hadir memudahkan hidupmu dengan pilihan terbaik.</span>
+  </p>
+  <div class="social-links">
+    <a href="https://www.tiktok.com/@fyibyme.id?_t=ZS-8zF64QjRJ03&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    <a href="https://www.instagram.com/fyibyme.id?igsh=eWd6a3FkcWxjNm1" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+  </div>
+</section>
+
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Cari nama produk...">
+</div>
+
+<!-- Produk per kategori -->
+<h3 class="category-title">Kesehatan</h3>
+<section class="products" id="kesehatan">
+  <div class="card">
+    <img src="https://i.postimg.cc/3dkcJF7q/Sevel-2023-10-400x266.jpg" alt="Sevel">
+    <div class="card-content">
+      <div class="category">Kesehatan</div>
+      <h3>SEVEL - ISI 10 (WIL.1 X 2)</h3>
+      <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
     </div>
-  </header>
-
-  <main>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Cari nama produk..." onkeyup="searchProduct()">
+  </div>
+  <div class="card">
+    <img src="https://i.postimg.cc/T1PS46FG/minyakherbasinergi.webp" alt="Minyak Herba Sinergi">
+    <div class="card-content">
+      <div class="category">Kesehatan</div>
+      <h3>MINYAK HERBA SINERGI 2020</h3>
+      <a href="https://s.hni.id/QJTE50Z" target="_blank">Beli Produk</a>
     </div>
+  </div>
+</section>
 
-    <div class="products" id="productList">
-      <!-- Produk 1 -->
-      <div class="card">
-        <img src="https://s3.bukalapak.com/img/18653510392/large/data.png" alt="Produk">
-        <div class="card-content">
-          <div class="category">Kesehatan</div>
-          <h3>SEVEL - ISI 10 (WIL.1 X 2)</h3>
-          <a href="https://s.hni.id/DHXIEXF" target="_blank">Beli Produk</a>
-        </div>
-      </div>
-
-      <!-- Produk 2 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200" alt="Produk">
-        <div class="card-content">
-          <div class="category">Kecantikan</div>
-          <h3>Produk Kecantikan A</h3>
-          <a href="#" target="_blank">Beli Produk</a>
-        </div>
-      </div>
-
-      <!-- Produk 3 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200" alt="Produk">
-        <div class="card-content">
-          <div class="category">Teknologi</div>
-          <h3>Produk Teknologi B</h3>
-          <a href="#" target="_blank">Beli Produk</a>
-        </div>
-      </div>
-
+<h3 class="category-title">Minuman</h3>
+<section class="products" id="minuman">
+  <div class="card">
+    <img src="https://i.postimg.cc/FRp8pRPD/matchalatte.png" alt="Hania Matcha Latte">
+    <div class="card-content">
+      <div class="category">Minuman</div>
+      <h3>HANIA MATCHA LATTE</h3>
+      <a href="https://s.hni.id/61JXZVQ" target="_blank">Beli Produk</a>
     </div>
-  </main>
+  </div>
+</section>
 
-  <footer>
-    © 2025 FYIBYME.id | All Rights Reserved
-  </footer>
+<h3 class="category-title">Kecantikan</h3>
+<section class="products" id="kecantikan">
+  <div class="card">
+    <img src="https://i.postimg.cc/wMbPKrYN/sabunkolagen.webp" alt="Sabun Kolagen">
+    <div class="card-content">
+      <div class="category">Kecantikan</div>
+      <h3>SABUN TRANSPARAN KOLAGEN</h3>
+      <a href="https://s.hni.id/2XAPJ9U" target="_blank">Beli Produk</a>
+    </div>
+  </div>
+</section>
 
-  <script>
-    function searchProduct() {
-      let input = document.getElementById("searchInput").value.toLowerCase();
-      let cards = document.getElementById("productList").getElementsByClassName("card");
-      for (let i = 0; i < cards.length; i++) {
-        let title = cards[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
-        cards[i].style.display = title.includes(input) ? "" : "none";
+<h3 class="category-title">Perawatan Diri</h3>
+<section class="products" id="perawatan">
+  <div class="card">
+    <img src="https://i.postimg.cc/SKpCTHvM/pastagigiherbal.jpg" alt="Pasta Gigi Herbal">
+    <div class="card-content">
+      <div class="category">Perawatan Diri</div>
+      <h3>PASTA GIGI HERBAL SIWAK SIRIH MINT</h3>
+      <a href="https://s.hni.id/TLGGAWN" target="_blank">Beli Produk</a>
+    </div>
+  </div>
+</section>
+
+<h3 class="category-title">Sepatu</h3>
+<section class="products" id="sepatu">
+  <div class="card">
+    <img src="https://i.postimg.cc/WbMH6bs4/Screenshot-20250828-110635.jpg" alt="Ortuseight Berlin X Deadpool">
+    <div class="card-content">
+      <div class="category">Sepatu</div>
+      <h3>ORTUSEIGHT BERLIN X DEADPOOL WALKING SHOES</h3>
+      <a href="https://vt.tokopedia.com/t/ZSAuepgwg/" target="_blank">Beli Produk</a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://i.postimg.cc/PxJsvkzR/Screenshot-20250827-141825.jpg" alt="Ortuseight Brisbane Walking Shoes">
+    <div class="card-content">
+      <div class="category">Sepatu</div>
+      <h3>ORTUSEIGHT BRISBANE WALKING SHOES</h3>
+      <a href="https://vt.tokopedia.com/t/ZSAuedRHa/" target="_blank">Beli Produk</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 FYIBYME.id | All Rights Reserved</p>
+</footer>
+
+<script>
+// Filter Produk
+const searchInput = document.getElementById('searchInput');
+const sections = document.querySelectorAll('.products');
+
+searchInput.addEventListener('keyup', function() {
+  const filter = searchInput.value.toLowerCase();
+  sections.forEach(section => {
+    let found = false;
+    section.querySelectorAll('.card').forEach(card => {
+      const text = card.querySelector('h3').textContent.toLowerCase();
+      if (text.includes(filter)) {
+        card.style.display = '';
+        found = true;
+      } else {
+        card.style.display = 'none';
       }
+    });
+    section.style.display = found ? '' : 'none';
+  });
+});
+
+// Animasi muncul saat scroll
+const cards = document.querySelectorAll('.card');
+function revealCards() {
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    const winHeight = window.innerHeight;
+    if (cardTop < winHeight - 50) {
+      card.classList.add('show');
     }
-  </script>
+  });
+}
+window.addEventListener('scroll', revealCards);
+revealCards();
+
+// Animasi deskripsi berganti
+const descs = document.querySelectorAll(".tagline span");
+let idx = 0;
+function showDesc() {
+  descs.forEach((d, i) => d.classList.toggle("active", i === idx));
+  idx = (idx + 1) % descs.length;
+}
+showDesc();
+setInterval(showDesc, 3000);
+</script>
+
 </body>
 </html>
